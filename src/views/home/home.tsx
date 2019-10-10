@@ -1,5 +1,5 @@
 import React from 'react';
 
 export const Home = () => {
-    return <p>home</p>;
+    return <p style={{color: 'red' }}>home</p>;
 };
