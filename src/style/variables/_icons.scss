@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'icon';
+    src:  url(./../../img/icons/icons.ttf) format('truetype');
+}
+  
+.icon {
+    &:before {
+        font-family: 'icon';
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    &--home:before {
+        content: "\e902";
+    }
+    &--edit:before {
+        content: "\e905";
+    }
+    &--notification:before {
+        content: "\e951";
+    }
+    &--retry:before {
+        content: "\e984";
+    }
+    &--search:before {
+        content: "\e986";
+    }
+    &--settings:before {
+        content: "\e992";
+    }
+    &--appraisals:before {
+        content: "\e9a9";
+    }
+    &--delete:before {
+        content: "\e9ac";
+    }
+    &--work:before {
+        content: "\e9ae";
+    }
+    &--show-password:before {
+        content: "\e9ce";
+    }
+    &--hide-password:before {
+        content: "\e9d1";
+    }
+    &--half-star:before {
+        content: "\e9d8";
+    }
+    &--one--star:before {
+        content: "\e9d9";
+    }
+    &--like:before {
+        content: "\e9da";
+    }
+    &--error:before {
+        content: "\ea07";
+    }
+    &--info:before {
+        content: "\ea0c";
+    }
+    &--logout:before {
+        content: "\ea14";
+    }
+    &--login:before {
+        content: "\ea13";
+    }
+}
+  

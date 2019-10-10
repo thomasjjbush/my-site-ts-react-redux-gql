@@ -1,0 +1,33 @@
+@import 'variables/pallette';
+@import 'variables/icons';
+
+:root {
+    --background-color: #{$white};
+    --offset-color: #{$lightGrey};
+    --font-color: #{$black};
+    --icon: url(./../img/logo-pink.svg) 0 0 / 100% 100% no-repeat;
+    --primary-color: #{$pink};
+    --secondary-color: #{$blue};
+    &[data-theme=dark] {
+        --background-color: #{$black};
+        --offset-color: #{$darkGrey};
+        --font-color: #{$white};
+        --icon: url(./../img/logo-white.svg) 0 0 / 100% 100% no-repeat;
+        --primary-color: #{$pink};
+        --secondary-color: #{$blue};
+    }   
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    width: 100%;
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        outline: none;
+    }
+    button {
+        appearance: none;
+        border: none;
+    }
+}

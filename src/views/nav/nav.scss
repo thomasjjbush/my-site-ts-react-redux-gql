@@ -1,0 +1,33 @@
+@import './../../style/variables/pallette';
+
+.nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+    padding: 0 10px;
+    box-shadow: 0px 6px 12px -3px rgba($color: $black, $alpha: 0.2);
+    background-color: var(--background-color);
+    div {
+        height: 100%;
+    }
+    &__logo {
+        width: 30px;
+        height: 30px;
+        background: var(--icon);
+    }
+    &__button {
+        margin-left: 10px;
+        height: 100%;
+    }
+    &__link {
+        height: 100%;
+        margin-left: 10px;
+        text-decoration: none;
+        color: var(--font-color);
+        &--active {
+            color: var(--primary-color);
+        }
+    }
+}

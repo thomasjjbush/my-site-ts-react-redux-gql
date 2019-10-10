@@ -1,12 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { Provider } from 'react-redux';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { getItem } from './helpers/local-storage';
+import { initialiseClient, initialiseStore, initialiseUser } from './initialise';
+import { BrowserRouter as Router } from "react-router-dom";
+import './style/index.scss';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const initialise = async (): Promise<void> => {
+    const token = await getItem('token');
+    const client = await initialiseClient(token);  
+    const user = await initialiseUser(client);
+    const store = initialiseStore({ 
+        client,
+        user, 
+    });
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+    return ReactDOM.render(
+        <Provider store={store}>
+            <Router>
+                <App 
+                    clientUnavailable={!client}
+                    tokenExpired={token && !user}
+                />
+            </Router>
+        </Provider>,
+        document.getElementById('root')
+    );
+};
+
+initialise();
